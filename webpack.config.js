@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  entry: ["@babel/polyfill", "./src/index.js"],
   module: {
     rules: [
       {
@@ -18,6 +19,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
@@ -26,4 +31,12 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  devServer:{
+    proxy: {
+      "/api": {
+      target: 'https://rws-cards-api.herokuapp.com',
+      changeOrigin: true,
+      }
+    }
+  }
 }
