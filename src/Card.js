@@ -84,25 +84,33 @@ const Front = styled(Inner)`
     font-size: 30px;
     text-align: center;
     transform: rotateY(180deg);
+    overflow: hidden;
 
     ${({ reverse }) => reverse && reverseStyle};
 `
 
-const Card = props => {
-    const {
-        name = 'name',
-        reverse,
-    } = props
-    return (
-        <Wrapper {...props}>
-            <Outer>
-                <Front reverse={reverse}>
-                    <div>{name}</div>
-                </Front>
-                <Back><div /></Back>
-            </Outer>
-        </Wrapper>
-    )
+class Card extends React.Component {
+    shouldComponentUpdate(nextProps) {
+        return nextProps !== this.props
+    }
+
+    render() {
+        const {
+            name = 'name',
+            reverse,
+        } = this.props
+        console.log('CARD')
+        return (
+            <Wrapper {...this.props}>
+                <Outer>
+                    <Front reverse={reverse}>
+                        <div>{name}</div>
+                    </Front>
+                    <Back><div /></Back>
+                </Outer>
+            </Wrapper>
+        )
+    }
 }
 
 export default Card
