@@ -19,6 +19,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "css-loader": "^3.3.2",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",

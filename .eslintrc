@@ -5,7 +5,8 @@
         "es6": true
     },
     "extends": [
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "airbnb"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -31,6 +32,11 @@
         "arrow-parens": [
             "error",
             "as-needed"
-        ]
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "react/jsx-props-no-spreading": 0
     }
 }
