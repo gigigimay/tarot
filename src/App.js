@@ -42,17 +42,6 @@ class App extends React.Component {
     return (
       <>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {cards && cards.ar00 && (
-            <Card
-              key={cards.ar00.name_short}
-              name={cards.ar00.name}
-              front={cards.ar00.open}
-              onClick={this.onClick(cards.ar00)}
-              reverse={cards.ar00.reverse}
-            />
-          )}
-        </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           {cards && cardOrders && cardOrders.map(key => {
             const c = cards[key]
             return (
